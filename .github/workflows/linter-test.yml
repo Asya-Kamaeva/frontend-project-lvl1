@@ -4,5 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: npm install
+        run: make install
+        env:
+          CI: true
       - name: linter-t
         run: make lint
