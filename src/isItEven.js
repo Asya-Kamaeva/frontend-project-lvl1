@@ -12,7 +12,7 @@ const IsItEven = () => {
     const isEven = randomNumber % 2 === 0;
     const correctAnsw = (isEven === true) ? 'yes' : 'no';
     const userAnsw = readlineSync.question('Your answer: ').toLowerCase();
-    const boolAnsw = (userAnsw === 'yes') ? true : false;
+    const boolAnsw = userAnsw === 'yes';
     if (isEven === boolAnsw) {
       count += 1;
       console.log('Correct!');
