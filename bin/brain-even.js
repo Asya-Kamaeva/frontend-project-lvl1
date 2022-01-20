@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import firstGame from '../src/isItEven.js';
+import firstGame from '../src/games/isItEven.js';
 
-console.log('Welcome to the Brain Games!');
 firstGame();

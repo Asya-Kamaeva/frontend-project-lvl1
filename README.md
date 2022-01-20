@@ -5,5 +5,8 @@
 
 [![Actions Status](https://github.com/Asya-Kamaeva/frontend-project-lvl1/workflows/linter-test/badge.svg)](https://github.com/Asya-Kamaeva/frontend-project-lvl1/actions)
 
-Example of installation
+Example of installation and 1st game
 https://asciinema.org/a/iM4qNyfoWCjqSfKH5VNF6NIZf
+
+2nd game
+https://asciinema.org/a/HsuqX6MbzBU4yEl5aJNxlvH39
