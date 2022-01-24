@@ -10,3 +10,9 @@ https://asciinema.org/a/iM4qNyfoWCjqSfKH5VNF6NIZf
 
 2nd game
 https://asciinema.org/a/HsuqX6MbzBU4yEl5aJNxlvH39
+
+3rd game
+https://asciinema.org/a/DdIVSqoIHVLb1sHElpooDBfiQ
+
+4th game
+https://asciinema.org/a/TBDB0KmlmoOGKkBiyhUE7cClg
