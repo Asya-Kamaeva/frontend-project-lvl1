@@ -16,3 +16,6 @@ https://asciinema.org/a/DdIVSqoIHVLb1sHElpooDBfiQ
 
 4th game
 https://asciinema.org/a/TBDB0KmlmoOGKkBiyhUE7cClg
+
+5th game
+https://asciinema.org/a/T9P9cVcZOMe8sUeZZXmHlLL5l
