@@ -5,11 +5,10 @@ const Nod = () => {
   index.welcome();
   index.rules('Find the greatest common divisor of given numbers.');
   const serchNod = (x, y) => {
-    while (x && y) {
-      x > y ? x %= y : y %= x;
+    if (y === 0) {
+      return x;
     }
-    x += y;
-    return x;
+    return serchNod(y, x % y);
   };
   const game3 = () => {
     const num1 = Math.floor(Math.random() * 50 + 1);

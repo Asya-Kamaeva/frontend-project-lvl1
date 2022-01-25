@@ -5,6 +5,18 @@
 
 [![Actions Status](https://github.com/Asya-Kamaeva/frontend-project-lvl1/workflows/linter-test/badge.svg)](https://github.com/Asya-Kamaeva/frontend-project-lvl1/actions)
 
+This project consist 5 small mathematics games:
+  brain-even - check if the number is even or not
+  brain-calc - calculate the value
+  brain-gcd - find the greatest common divisor
+  brain-progression - find the missing value in the progression
+  brain-prime - check a prime number or not
+
+The installation:
+  1) git clone <link to repo>
+  2) make install
+  3) sudo npm link
+
 Example of installation and 1st game
 https://asciinema.org/a/iM4qNyfoWCjqSfKH5VNF6NIZf
 
