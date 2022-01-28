@@ -10,6 +10,9 @@ const Prime = () => {
   };
   const prime = (num) => {
     let answ = 0;
+    if (num === 1) {
+      answ = 1;
+    }
     for (let i = 2; i < num; i += 1) {
       if (num % i === 0) {
         answ = 1;
@@ -19,7 +22,7 @@ const Prime = () => {
     return answ;
   };
   const game5 = () => {
-    const random = randomNum(1, 20);
+    const random = randomNum(1, 2);
     const randomIsPrime = prime(random);
     const result = (randomIsPrime === 0) ? 'yes' : 'no';
     console.log(`Question: ${random}`);
