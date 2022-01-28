@@ -1,14 +1,11 @@
-import readlineSync from 'readline-sync';
-import * as index from '../index.js';
+import LayoutOfGame from '../index.js';
 
 const Prime = () => {
-  index.welcome();
-  index.rules('Answer "yes" if given number is prime. Otherwise answer "no".');
   const randomNum = (min, max) => {
     const rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
   };
-  const prime = (num) => {
+  const isPrime = (num) => {
     let answ = 0;
     if (num === 1) {
       answ = 1;
@@ -21,14 +18,14 @@ const Prime = () => {
     }
     return answ;
   };
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const game5 = () => {
-    const random = randomNum(1, 2);
-    const randomIsPrime = prime(random);
+    const random = randomNum(1, 20);
+    const randomIsPrime = isPrime(random);
     const result = (randomIsPrime === 0) ? 'yes' : 'no';
     console.log(`Question: ${random}`);
-    const userAnsw = readlineSync.question('Your answer: ');
-    return [result, userAnsw];
+    return result;
   };
-  index.LayoutOfGame(game5);
+  LayoutOfGame(game5, rules);
 };
 export default Prime;
