@@ -1,10 +1,6 @@
-import readlineSync from 'readline-sync';
-import * as index from '../index.js';
+import LayoutOfGame from '../index.js';
 
 const Calc = () => {
-  index.welcome();
-
-  index.rules('What is the result of the expression?');
   const signs = ['+', '-', '*'];
   const randomNum = (arr) => {
     const maxLength = arr.length;
@@ -24,16 +20,17 @@ const Calc = () => {
     }
     return c;
   };
+  const rules = 'What is the result of the expression?';
   const game2 = () => {
-    const number1 = Math.floor(Math.random() * 100 + 1);
-    const number2 = Math.floor(Math.random() * 100 + 1);
+    const number1 = Math.floor(Math.random() * 10 + 1);
+    const number2 = Math.floor(Math.random() * 10 + 1);
     const number3 = randomNum(signs);
     const action = signs[number3];
     const result = signAction(action, number1, number2);
+    const resultStr = String(result);
     console.log(`Question: ${number1} ${action} ${number2}`);
-    const userAnsw = Number(readlineSync.question('Your answer: '));
-    return [result, userAnsw];
+    return resultStr;
   };
-  index.LayoutOfGame(game2);
+  LayoutOfGame(game2, rules);
 };
 export default Calc;

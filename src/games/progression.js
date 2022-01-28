@@ -1,10 +1,6 @@
-import readlineSync from 'readline-sync';
-import * as index from '../index.js';
+import LayoutOfGame from '../index.js';
 
 const Progression = () => {
-  index.welcome();
-  index.rules('What number is missing in the progression?');
-
   const randomNum = (min, max) => {
     const rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
@@ -19,6 +15,7 @@ const Progression = () => {
     }
     return (arr);
   };
+  const rules = 'What number is missing in the progression?';
   const game4 = () => {
     const startNum = randomNum(1, 100);
     const stepNum = randomNum(1, 10);
@@ -26,12 +23,12 @@ const Progression = () => {
     const hiddenEl = randomNum(1, count);
     const bigArr = progression(startNum, stepNum, count);
     const result = bigArr[hiddenEl - 1];
+    const resultStr = String(result);
     bigArr[hiddenEl - 1] = '..';
     const strArr = bigArr.join(' ');
     console.log(`Question: ${strArr}`);
-    const userAnsw = Number(readlineSync.question('Your answer: '));
-    return [result, userAnsw];
+    return resultStr;
   };
-  index.LayoutOfGame(game4);
+  LayoutOfGame(game4, rules);
 };
 export default Progression;
