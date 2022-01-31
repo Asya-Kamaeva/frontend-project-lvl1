@@ -1,31 +1,28 @@
-import LayoutOfGame from '../index.js';
+import BuildAGame from '../index.js';
+import chooseRandomNumber from '../utils.js';
 
-const Prime = () => {
-  const randomNum = (min, max) => {
-    const rand = min - 0.5 + Math.random() * (max - min + 1);
-    return Math.round(rand);
-  };
-  const isPrime = (num) => {
-    let answ = 0;
-    if (num === 1) {
-      answ = 1;
+const checkTheNumber = (number) => {
+  let answer = 0;
+  if (number === 1) {
+    answer = 1;
+  }
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      answer = 1;
+      break;
     }
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) {
-        answ = 1;
-        break;
-      }
-    }
-    return answ;
-  };
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const game5 = () => {
-    const random = randomNum(1, 20);
-    const randomIsPrime = isPrime(random);
-    const result = (randomIsPrime === 0) ? 'yes' : 'no';
-    console.log(`Question: ${random}`);
-    return result;
-  };
-  LayoutOfGame(game5, rules);
+  }
+  return answer;
 };
-export default Prime;
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const play = () => {
+  const randomNumber = chooseRandomNumber(1, 20);
+  const flag = checkTheNumber(randomNumber);
+  const result = (flag === 0) ? 'yes' : 'no';
+  const question = `Question: ${randomNumber}`;
+  return [result, question];
+};
+
+export default () => {
+  BuildAGame(play, rules);
+};

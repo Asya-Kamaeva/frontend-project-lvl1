@@ -1,34 +1,31 @@
-import LayoutOfGame from '../index.js';
+import BuildAGame from '../index.js';
+import chooseRandomNumber from '../utils.js';
 
-const Progression = () => {
-  const randomNum = (min, max) => {
-    const rand = min - 0.5 + Math.random() * (max - min + 1);
-    return Math.round(rand);
-  };
-  const progression = (start, step, length) => {
-    const arr = [];
-    arr.push(start);
-    let a = start;
-    while (arr.length < length) {
-      a += step;
-      arr.push(a);
-    }
-    return (arr);
-  };
-  const rules = 'What number is missing in the progression?';
-  const game4 = () => {
-    const startNum = randomNum(1, 100);
-    const stepNum = randomNum(1, 10);
-    const count = randomNum(5, 10);
-    const hiddenEl = randomNum(1, count);
-    const bigArr = progression(startNum, stepNum, count);
-    const result = bigArr[hiddenEl - 1];
-    const resultStr = String(result);
-    bigArr[hiddenEl - 1] = '..';
-    const strArr = bigArr.join(' ');
-    console.log(`Question: ${strArr}`);
-    return resultStr;
-  };
-  LayoutOfGame(game4, rules);
+const generateProgression = (start, step, length) => {
+  const values = [];
+  values.push(start);
+  let value = start;
+  while (values.length < length) {
+    value += step;
+    values.push(value);
+  }
+  return (values);
 };
-export default Progression;
+const rules = 'What number is missing in the progression?';
+const play = () => {
+  const startNumber = chooseRandomNumber(1, 100);
+  const stepNumber = chooseRandomNumber(1, 10);
+  const numberOfElements = chooseRandomNumber(5, 10);
+  const hiddenElement = chooseRandomNumber(1, numberOfElements);
+  const resultProgression = generateProgression(startNumber, stepNumber, numberOfElements);
+  const result = resultProgression[hiddenElement - 1];
+  const stringResult = String(result);
+  resultProgression[hiddenElement - 1] = '..';
+  const stringResultProgression = resultProgression.join(' ');
+  const question = `Question: ${stringResultProgression}`;
+  return [stringResult, question];
+};
+
+export default () => {
+  BuildAGame(play, rules);
+};
