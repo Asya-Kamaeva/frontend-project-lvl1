@@ -1,17 +1,15 @@
-import BuildAGame from '../index.js';
+import buildAGame from '../index.js';
 import chooseRandomNumber from '../utils.js';
 
+const rules = 'What number is missing in the progression?';
 const generateProgression = (start, step, length) => {
   const values = [];
-  values.push(start);
-  let value = start;
-  while (values.length < length) {
-    value += step;
-    values.push(value);
+  for (let i = 0; values.length < length; i += 1) {
+    const current = start + (step * i);
+    values.push(current);
   }
   return (values);
 };
-const rules = 'What number is missing in the progression?';
 const play = () => {
   const startNumber = chooseRandomNumber(1, 100);
   const stepNumber = chooseRandomNumber(1, 10);
@@ -22,10 +20,10 @@ const play = () => {
   const stringResult = String(result);
   resultProgression[hiddenElement - 1] = '..';
   const stringResultProgression = resultProgression.join(' ');
-  const question = `Question: ${stringResultProgression}`;
+  const question = `${stringResultProgression}`;
   return [stringResult, question];
 };
 
 export default () => {
-  BuildAGame(play, rules);
+  buildAGame(play, rules);
 };
