@@ -4,7 +4,7 @@ import chooseRandomNumber from '../utils.js';
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
-  if (number === 1) {
+  if (number < 2) {
     return false;
   }
   const sqrtOfNumber = Math.sqrt(number);
